@@ -89,5 +89,3 @@ with textcontainer:
     with col2:
         st.button("Search", on_click=clear_text)
 
-
-
