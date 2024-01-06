@@ -7,9 +7,15 @@ from langchain.prompts import (
     ChatPromptTemplate,
     MessagesPlaceholder
 )
+import os
+from dotenv import load_dotenv
 import streamlit as st
 from streamlit_chat import message
 from utils import *
+
+load_dotenv()
+openai_api_key = os.getenv('OPENAI_API_KEY')
+
 
 st.subheader("Chatbot with Langchain, ChatGPT, Pinecone, and Streamlit")
 
@@ -32,7 +38,7 @@ if 'responses' not in st.session_state:
 if 'requests' not in st.session_state:
     st.session_state['requests'] = ["Hello, nice to meet you!"]
 
-llm = ChatOpenAI(model_name="gpt-4", openai_api_key="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")
+llm = ChatOpenAI(model_name="gpt-4", openai_api_key=openai_api_key)
 
 if 'buffer_memory' not in st.session_state:
             st.session_state.buffer_memory=ConversationBufferWindowMemory(k=3,return_messages=True)

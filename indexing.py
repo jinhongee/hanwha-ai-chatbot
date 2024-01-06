@@ -1,4 +1,9 @@
+import os
+from dotenv import load_dotenv
 from langchain.document_loaders import DirectoryLoader
+
+load_dotenv()
+pinecone_api_key = os.getenv('PINECONE_API_KEY')
 
 directory = './data'
 
@@ -30,7 +35,7 @@ embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 import pinecone 
 from langchain.vectorstores import Pinecone
 pinecone.init(
-    api_key="56a9ce45-5652-4776-80a8-db04c55ea8dd",  # find at app.pinecone.io
+    api_key=pinecone_api_key,  # find at app.pinecone.io
     environment="gcp-starter"  # next to api key in console
 )
 index_name = "hanhwa-chatbot"

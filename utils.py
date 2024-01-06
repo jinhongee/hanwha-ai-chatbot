@@ -1,8 +1,13 @@
 from sentence_transformers import SentenceTransformer
 import pinecone
 from openai import OpenAI
+import os
+from dotenv import load_dotenv
 
-client = OpenAI(api_key="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")
+load_dotenv()
+openai_api_key = os.getenv('OPENAI_API_KEY')
+
+client = OpenAI(api_key=openai_api_key)
 import streamlit as st
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
