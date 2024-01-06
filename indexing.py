@@ -13,7 +13,7 @@ print("documents,", len(documents))
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-def split_docs(documents,chunk_size=1000,chunk_overlap=100):
+def split_docs(documents,chunk_size=1000,chunk_overlap=900):
   text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
   docs = text_splitter.split_documents(documents)
   return docs
@@ -43,3 +43,6 @@ def get_similiar_docs(query,k=1,score=False):
     similar_docs = index.similarity_search(query,k=k)
   return similar_docs
 
+query = "What is mentioned as the cause for the distance between people last year?"
+similar_docs = get_similiar_docs(query)
+print(*similar_docs, sep = "\n\n")
