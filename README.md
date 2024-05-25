@@ -18,7 +18,7 @@ Demo: https://hanwha-ai-chatbot-kjcegyfuboprprxtxfn7nk.streamlit.app/
 
 ## 2. 서비스 구조
 
-<img width="743" alt="image" src="https://github.com/jinhongee/hanwha-ai-chatbot/assets/77202712/951d8a13-25cd-4dc4-b63b-3e6d57f17df7">
+<img width="743" alt="image" src="https://github.com/jinhongee/hanwha-ai-chatbot/assets/77202712/e8e5333c-3dbf-4af7-b190-772ae7b7f3fb">
 
 <br />
 <br />
